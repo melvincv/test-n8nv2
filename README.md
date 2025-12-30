@@ -48,7 +48,18 @@ Edit the `.env` file with your preferred editor:
 
 **Important:** Generate a strong encryption key. You can use a tool like `openssl rand -hex 32` to create one.
 
-### 3. Start the Services
+### 2.5. Configure Local Domain (Windows Users)
+
+To access n8n using your local domain name on Windows:
+
+1. Download and install the Hosts File Editor from [https://hostsfileeditor.com/](https://hostsfileeditor.com/)
+2. Open the Hosts File Editor application
+3. Add a new entry: `127.0.0.1 [SUBDOMAIN].[DOMAIN_NAME]` (replace with your configured subdomain and domain name, e.g., `127.0.0.1 localn8n.melvincv.com`)
+4. Save the changes in the Hosts File Editor
+
+This will allow your browser to resolve the local domain to your local machine.
+
+### 4. Start the Services
 
 ```bash
 # Pull the latest images
@@ -61,20 +72,20 @@ docker compose up -d
 docker compose ps
 ```
 
-### 4. Monitor Logs
+### 5. Monitor Logs
 
 ```bash
 # View logs for all services
 docker compose logs --tail 100 -f
 ```
 
-### 5. Access n8n
+### 6. Access n8n
 
 Open your browser and navigate to: `https://[SUBDOMAIN].[DOMAIN_NAME]`
 
 For example: `https://localn8n.melvincv.com/`
 
-### 6. Initial Setup
+### 7. Initial Setup
 
 1. Create an admin account with your email and a strong password
 2. Check your email for a license activation link
